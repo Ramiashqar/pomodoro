@@ -1,0 +1,94 @@
+//Buttons
+
+// !! Not a standard feel free to change
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 2rem 3rem;
+    border-radius: 10rem;
+    display: inline-block;
+    box-shadow: 0 0.3rem 1rem gray;
+    margin-top: 6%;
+    transition: all 0.19s;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-weight: 700;
+
+    //For the button element
+    border: none;
+    cursor: pointer;
+  }
+  &:hover {
+    transform: translateY(-0.8rem);
+    box-shadow: 0 0.5rem 0.45rem rgba($color-black, 0.6);
+    &::after {
+      transform: scale(1.4, 1.8);
+      opacity: 0;
+    }
+  }
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-0.05rem);
+    box-shadow: 0 0.5rem 0.25rem rgba($color-black, 0.1);
+  }
+  &--white {
+    background-color: $primary-color;
+    color: $color-white;
+
+    &::after {
+      background-color: $primary-color;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transition: all 0.4s;
+    }
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+  }
+  &--teal {
+    background-color: $color-teal;
+    color: $primary-color;
+    &::after {
+      background-color: $color-teal;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transition: all 0.4s;
+    }
+  }
+}
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $f-size;
+    color: $color-teal;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-teal;
+    padding: 3px;
+    transition: all 0.2s;
+  }
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+    box-shadow: 1rem 1rem 0.5rem $color-grey;
+    transform: translateY(-2px);
+  }
+  &:active {
+    box-shadow: 0.3rem 0.3rem 0.5rem $color-grey;
+    transform: translateY(0);
+  }
+}

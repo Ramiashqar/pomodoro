@@ -1,0 +1,68 @@
+.modal {
+  @include btn;
+  &__overlay {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color-black, 0.5);
+    opacity: 0;
+    display: none;
+  }
+  &__content {
+    z-index: 2;
+    position: fixed;
+    background-color: $color-white;
+    box-shadow: $color-black 0 0 5rem;
+    padding: 2rem 2rem 1rem 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: $f-size;
+    opacity: 0;
+    display: none;
+    @include respond(tab-land){
+        top: 50%;
+        left: 20%;
+        transform: translate(-15%, -50%);
+    }
+    &--header {
+      font-size: 2rem;
+      padding: 1rem 0 1rem 3rem;
+    }
+    &--para {
+      padding-bottom: 1rem;
+    }
+    &--footer {
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      border-top: 1px solid $color-grey;
+      text-align: right;
+      .agree,
+      .disagree {
+        margin: 1rem;
+        margin-top: 3rem;
+        padding: 1rem;
+        &:hover {
+          color: $color-white;
+        }
+      }
+      .agree {
+        &:hover {
+          background-color: rgba($color-teal, 0.8);
+        }
+      }
+      .disagree {
+        &:hover {
+          background-color: rgba($color-red, 0.8);
+        }
+      }
+    }
+  }
+}
+.show-modal {
+  opacity: 1;
+  display: block;
+}

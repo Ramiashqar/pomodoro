@@ -1,0 +1,36 @@
+// COLLAPSIBLE
+
+.collapsible {
+  position: relative;
+  width: 50rem;
+  box-shadow: $color-black 0 0.4rem 0.7rem;
+  list-style: none;
+
+  &-header,
+  &-content {
+    border-bottom: 1px solid $color-grey-light;
+  }
+  &-header {
+    padding: 1rem;
+    padding-left: 3rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+  }
+  &-content {
+    font-size: $f-size;
+    padding: 3rem 2rem;
+    height: 0;
+    display: none;
+    transition: all 0.4s ease;
+  }
+}
+// Open the related collapse
+.active-collapse {
+  height: auto;
+  opacity: 1;
+  display: block;
+}
+// The active header style
+.add-bg {
+  background-color: $color-grey-light;
+}

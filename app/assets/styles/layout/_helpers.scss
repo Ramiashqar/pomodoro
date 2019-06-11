@@ -1,0 +1,44 @@
+// HELPERS
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+.hide-phone {
+  @include respond(phone) {
+    display: none;
+    visibility: hidden;
+  }
+}
+.hide-tab-port {
+  @include respond(tab-port) {
+    display: none;
+    visibility: hidden;
+  }
+}
+.hide-tab-land {
+  @include respond(tab-land) {
+    display: none;
+    visibility: hidden;
+  }
+}
+.hide-desk {
+  @include respond(desk) {
+    display: none;
+    visibility: hidden;
+  }
+}
+.hide-big-desk-only {
+  @include respond(big-desk) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+//Hover Effect
+.hover-me {
+  transition: box-shadow .25s;
+  &:hover {
+    box-shadow: 0 8px 17px 0 rgba($primary-color, 0.2), 0 6px 20px 0 rgba($primary-color, 0.19);
+  }
+}

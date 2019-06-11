@@ -1,0 +1,26 @@
+.dropdown {
+  @include btn;
+  &__content {
+    font-size: $f-size;
+    flex-direction: column;
+    margin: 0.5rem 0 2rem 0;
+    width: 10rem;
+    box-shadow: $color-grey 0 1rem 2rem;
+    transform: translateY(-4.5rem);
+    opacity: 0;
+    display: none;
+  }
+  &__item {
+    background-color: $color-grey-light;
+    z-index: 2;
+    padding: 1rem;
+    color: $color-teal;
+    &:hover {
+      background-color: $color-white;
+    }
+  }
+}
+.show-drop{
+    opacity: 1;
+    display: flex;
+}

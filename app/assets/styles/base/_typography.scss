@@ -1,0 +1,50 @@
+// TYPOGRAPHY
+.f-black {
+  font-weight: 900;
+}
+.f-bold {
+  font-weight: 700;
+}
+.f-medium {
+  font-weight: 500;
+}
+.f-regular {
+  font-weight: $f-weight;
+}
+.f-light {
+  font-weight: 300;
+}
+.f-thin {
+  font-weight: 100;
+}
+
+//Text Align
+.t-center {
+  text-align: center;
+}
+.t-right {
+  text-align: right;
+}
+.t-left {
+  text-align: left;
+}
+.t-justify {
+  text-align: justify;
+}
+.rtl {
+  direction: rtl;
+}
+
+
+//Anchor
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+//Blockquote
+blockquote {
+  margin: 2rem 0;
+  padding-left: 1rem;
+  border-left: 0.4rem solid $primary-color;
+}
