@@ -16,7 +16,7 @@ html {
   //set 1 rem base value
   font-size: 62.5%; // 1rem= 10px; 10px/16px= 62.5%
   @include respond(tab-land) {
-    font-size: 56.25%; //1rem= 9px;
+    font-size: 60.25%; //1rem= 9px;
   }
   @include respond(tab-port) {
     font-size: 50%; //1rem= 8px;
@@ -30,6 +30,7 @@ html {
 body {
   width: 100%;
   padding: 2rem;
+  background-color: rgba($color-black, .9);
   @include respond(tab-port) {
     padding: 0;
   }

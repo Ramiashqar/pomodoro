@@ -10,7 +10,7 @@ const path = require("path"),
   ImageminPlugin = require("imagemin-webpack"),
   imageminGifsicle = require("imagemin-gifsicle"),
   imageminSvgo = require("imagemin-svgo"),
-  FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
+  FaviconsWebpackPlugin = require("favicons-webpack-plugin"),
   // compressionPlugin = require("compression-webpack-plugin"),
   // brotliPlugin = require("brotli-webpack-plugin"),
   CleanWebpackPlugin = require("clean-webpack-plugin"),
@@ -18,7 +18,7 @@ const path = require("path"),
 module.exports = env => {
   return {
     entry: {
-      main: ["./app/assets/scripts/index.js"],
+      main: ["./app/assets/scripts/index.js"]
       // sub: ["./app/assets/scripts/sub-index.js"]
     },
     mode: "production",
@@ -66,6 +66,17 @@ module.exports = env => {
             },
             {
               loader: "fast-sass-loader"
+            }
+          ]
+        },
+        {
+          test: /\.mp3$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "assets/sounds/[name].[ext]"
+              }
             }
           ]
         },
@@ -182,14 +193,14 @@ module.exports = env => {
       // }),
       // new brotliPlugin(),
       new FaviconsWebpackPlugin({
-        logo: './app/assets/images/favicon.png',
-        prefix: 'icons-[hash]/',
+        logo: "./app/assets/images/favicon.png",
+        prefix: "icons-[hash]/",
         emitStats: false,
-        statsFilename: 'iconstats-[hash].json',
+        statsFilename: "iconstats-[hash].json",
         persistentCache: false,
         inject: true,
-        background: '#fff',
-        title: 'pomodoro',
+        background: "#fff",
+        title: "pomodoro",
         icons: {
           android: false,
           appleIcon: false,

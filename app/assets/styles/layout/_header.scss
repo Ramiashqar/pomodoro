@@ -1,3 +1,68 @@
 // HEADER
 
-
+.header {
+  transition: transform 2s ease;
+  display: block;
+  @include respond(tab-port) {
+    margin-top: -14rem;
+  }
+  &__text {
+    color: $color-white;
+    font-weight: 700;
+    margin-top: 2rem;
+    text-shadow: $color-red 0 0 2rem;
+    z-index: 10;
+    width: 20rem;
+    position: absolute;
+    left: 51.5%;
+    transform: translate(-50%, 12%);
+    @include respond(tab-port) {
+      left: 53%;
+    }
+    @include respond(phone) {
+      left: 56%;
+    }
+    @include respond(phone-small) {
+      left: 58%;
+    }
+  }
+  &__image {
+    opacity: 0.8;
+    position: absolute;
+    left: 51.5%;
+    transform: translate(-80%, -5%);
+    @include respond(tab-port) {
+      left: 53%;
+    }
+    @include respond(phone) {
+      left: 56%;
+    }
+    @include respond(phone-small) {
+      left: 58%;
+    }
+  }
+}
+.nav-icon {
+  display: none;
+  @include respond(tab-port) {
+    display: initial;
+    z-index: 88;
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    background-color: rgba($color-black, 0.8);
+    padding: 0.5rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    transform: rotate(270deg);
+    &:hover {
+      cursor: pointer;
+    }
+    img {
+      width: 3rem;
+    }
+  }
+}
+.rotate {
+  animation: rotateIcon 1s ease-in-out;
+}

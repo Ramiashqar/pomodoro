@@ -1,85 +1,64 @@
 //ANIMATIONS
 
 // PRELOADER
-@keyframes preloader-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes preloader-line {
-  0% {
-    transform: translateX(0%);
-    opacity: 0;
-  }
-  90% {
-    transform: translateX(200%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(200%);
-    opacity: 0;
-  }
-}
 
-// TOASTS
-@keyframes fadeIn {
+@keyframes flashText {
+  0% {
+    color: rgba($color-white, 0.6);
+    transform: scale(1);
+  }
+  100% {
+    color: rgba($color-red, 0.6);
+    transform: scale(1.1);
+  }
+}
+@keyframes flashBtn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes hideMe {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes showMe {
   0% {
     opacity: 0;
-    right: 0;
   }
   100% {
     opacity: 1;
-    right: 5%;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 @keyframes fadeOut {
   0% {
+    transform: translateX(0);
     opacity: 1;
-    right: 5%;
   }
   100% {
-    opacity: 0;
-    right: 0;
+    transform: translateX(-100%);
+    opacity: 0 ;
   }
 }
-
-//TOOLTIPS
-@keyframes toLeft{
+@keyframes rotateIcon{
   0%{
-    opacity: 0;
-    top: 0%;
-    left: 10%;
+    transform: rotate(0);
   }
   100%{
-    opacity: 1;
-    top: 0;
-    left: 11%;
-  }
-}
-@keyframes toRight{
-  0%{
-    opacity: 0;
-    top: 0%;
-    left: 0%;
-  }
-  100%{
-    opacity: 1;
-    top: 0;
-    left: -1%;
-  }
-}
-@keyframes toTop{
-  0%{
-    opacity: 0;
-    bottom: 10%;
-    left: 5%;
-  }
-  100%{
-    opacity: 1;
-    bottom: 13%;
-    left: 5%;
+    transform: rotate(270deg)
   }
 }

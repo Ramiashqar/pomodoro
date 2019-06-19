@@ -1,44 +1,32 @@
 // utilities as a small toolbox sass file for quick fixes
 
-// .u-center-text {
-//   text-align: center !important;
-// }
-
-// .u-margin-bottom-small {
-//   margin-bottom: 1.5rem;
-// }
-
-// .u-margin-bottom-medium {
-//   margin-bottom: 4rem;
-//   @include respond(tab-port) {
-//     margin-bottom: 2rem;
-//   }
-// }
-
-// .u-margin-bottom-big {
-//   margin-bottom: 8rem;
-//   @include respond(tab-port) {
-//     margin-bottom: 4rem;
-//   }
-// }
-
-// .u-margin-top-small {
-//   margin-top: 2rem;
-//   @include respond(tab-port) {
-//     margin-top: 1rem;
-//   }
-// }
-
-// .u-margin-top-medium {
-//   margin-top: 4rem;
-//   @include respond(tab-port) {
-//     margin-top: 2rem;
-//   }
-// }
-
-// .u-margin-top-big {
-//   margin-top: 8rem;
-//   @include respond(tab-port) {
-//     margin-top: 4rem;
-//   }
-// }
+.u-read-only {
+  &:hover {
+    background-color: transparent;
+    cursor: none !important;
+    transform: none !important;
+    box-shadow: none;
+    font-size: 2rem;
+  }
+}
+.u-hide {
+  animation: hideMe 2s ease;
+  transform: scale(0) !important;
+}
+.u-show {
+  display: block !important;
+  animation: showMe 1s ease;
+}
+.u-selected {
+  box-shadow: $color-red 0 0 2rem !important;
+}
+.u-fade-out {
+  animation: fadeOut 1s ease-out;
+  transform: scale(0) !important;
+}
+.u-expand {
+  display: block !important;
+}
+.u-force-hide {
+  display: none !important;
+}

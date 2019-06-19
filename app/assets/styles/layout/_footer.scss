@@ -1,3 +1,28 @@
 // FOOTER
 
-
+.footer {
+  color: $color-white;
+  font-size: 1.2rem;
+  text-align: center;
+  @include respond(tab-port) {
+    margin-top: 7rem !important;
+  }
+  @include respond(phone) {
+   padding-right: 3rem;
+  }
+  p {
+    text-align: left;
+    margin-left: 5rem;
+    @include respond(phone) {
+      margin-bottom: 1.3rem;
+     }
+  }
+  a {
+    font-size: 1.4rem;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      font-size: 2rem;
+      color: $color-red;
+    }
+  }
+}

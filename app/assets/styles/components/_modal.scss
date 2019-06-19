@@ -1,68 +1,114 @@
 .modal {
-  @include btn;
-  &__overlay {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  text-align: center;
+  @include respond(tab-port) {
+    z-index: 100 !important;
+    background-color: $color-black;
     height: 100%;
     width: 100%;
-    background-color: rgba($color-black, 0.5);
-    opacity: 0;
-    display: none;
+    top: 57% !important;
+    left: 0 !important;
+    transform: translate(0, -50%);
   }
-  &__content {
-    z-index: 2;
-    position: fixed;
+  &__header {
+    font-size: 2.6rem;
+    margin-bottom: 9rem;
+    letter-spacing: 0.5rem;
+  }
+  &__tools {
+    display: inline-block;
     background-color: $color-white;
-    box-shadow: $color-black 0 0 5rem;
-    padding: 2rem 2rem 1rem 2rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: $f-size;
-    opacity: 0;
-    display: none;
-    @include respond(tab-land){
-        top: 50%;
-        left: 20%;
-        transform: translate(-15%, -50%);
+    color: $color-black;
+    padding: 1rem;
+    font-size: 2rem;
+    width: 4rem;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    user-select: none;
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+      color: $color-red;
     }
-    &--header {
+    &--minus {
+      margin-right: 1.3rem;
+    }
+    &--plus {
+      margin-left: 1.3rem;
+    }
+  }
+  &__input {
+    padding: 1.7rem 0;
+    font-size: 2.2rem;
+    text-align: center;
+    border: none;
+    border-radius: 4rem;
+    color: $color-red;
+    font-weight: 900;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__labels {
+    &--hint {
+      display: block;
+      margin-top: 5rem;
+      font-size: $f-size;
+      letter-spacing: 0.1rem;
+      & i {
+        text-decoration: underline;
+        color: $color-red;
+      }
+    }
+    &--wrong {
+      animation: shake 0.5s ease;
+    }
+    &--btn {
+      display: block;
       font-size: 2rem;
-      padding: 1rem 0 1rem 3rem;
+      color: $color-white;
+      background-color: $color-red;
+      margin: 0 auto;
+      margin-top: 2rem !important;
+      width: 7rem;
+      padding: 1rem 0;
+      border-radius: 4rem;
+      transition: all 0.3s ease;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+      }
     }
-    &--para {
-      padding-bottom: 1rem;
-    }
-    &--footer {
-      margin-top: 1rem;
-      padding: 1rem 2rem;
-      border-top: 1px solid $color-grey;
-      text-align: right;
-      .agree,
-      .disagree {
-        margin: 1rem;
-        margin-top: 3rem;
-        padding: 1rem;
-        &:hover {
-          color: $color-white;
-        }
-      }
-      .agree {
-        &:hover {
-          background-color: rgba($color-teal, 0.8);
-        }
-      }
-      .disagree {
-        &:hover {
-          background-color: rgba($color-red, 0.8);
-        }
-      }
+  }
+  &--overlay {
+    display: none;
+    background-color: $color-black;
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 89;
+    transition: opacity 0.3s ease;
+    backface-visibility: hidden;
+    &:hover {
+      opacity: 0.9;
     }
   }
 }
-.show-modal {
-  opacity: 1;
-  display: block;
+
+input[type="number"] {
+  appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }

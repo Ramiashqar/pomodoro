@@ -1,0 +1,26 @@
+.reset{
+    display: block;
+    margin-top: 2rem;
+    // width: 5rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    transition: all .3s ease-out;
+    &:hover{
+        cursor: pointer;
+        transform: translate(-50%, -5%) scale(1.1);
+        box-shadow: $color-white 0 0 1rem;
+        background-color: $color-red;
+    }
+    @include respond(tab-port){
+        box-shadow: $color-white 0 0 1rem;
+        background-color: $color-red;
+      }
+    &__dim{
+       background-image: none !important;
+       opacity: .6;
+    }
+}

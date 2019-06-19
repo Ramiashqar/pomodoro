@@ -5,8 +5,8 @@ module.exports = {
   entry: {
     main: [
       "webpack-hot-middleware/client?reload=true", //ignored with heroku use only
-      "./app/assets/scripts/index.js",
-    ],
+      "./app/assets/scripts/index.js"
+    ]
     // sub: [
     //   "webpack-hot-middleware/client?reload=true",
     //   "./app/assets/scripts/sub-index.js",
@@ -16,15 +16,15 @@ module.exports = {
   output: {
     filename: "[name]-bundle.js",
     path: path.resolve(__dirname, "../dist"),
-    publicPath: "",
+    publicPath: ""
   },
   devServer: {
     contentBase: "dist",
     overlay: true,
     hot: true,
     stats: {
-      colors: true,
-    },
+      colors: true
+    }
   },
   devtool: "source-map",
   module: {
@@ -34,23 +34,23 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
-          },
-        ],
+            loader: "babel-loader"
+          }
+        ]
       },
       {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader",
+            loader: "style-loader"
           },
           {
             loader: "css-loader",
             options: {
-              url: true,
-            },
-          },
-        ],
+              url: true
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -58,10 +58,10 @@ module.exports = {
           {
             loader: "html-loader",
             options: {
-              attrs: ["img:src"],
-            },
-          },
-        ],
+              attrs: ["img:src"]
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpg|svg|gif|jpeg)$/,
@@ -69,7 +69,18 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "assets/images/[name].[ext]",
+              name: "assets/images/[name].[ext]"
+            }
+          }
+        ]
+      },
+      {
+        test: /\.mp3$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "assets/sounds/[name].[ext]",
             },
           },
         ],
@@ -82,18 +93,18 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader", // creates style nodes from JS string
+            loader: "style-loader" // creates style nodes from JS string
           },
           {
-            loader: "css-loader", // translates CSS into CommonJS
+            loader: "css-loader" // translates CSS into CommonJS
           },
           {
-            loader: "postcss-loader",
+            loader: "postcss-loader"
           },
           {
-            loader: "fast-sass-loader",
-          },
-        ],
+            loader: "fast-sass-loader"
+          }
+        ]
       },
       {
         test: /\.htaccess$/,
@@ -101,10 +112,10 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name]",
-            },
-          },
-        ],
+              name: "[name]"
+            }
+          }
+        ]
       },
       {
         test: /\.(ttf|otf)(\?v=\d+\.\d+\.\d+)?$/,
@@ -112,12 +123,12 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "assets/fonts/[name].[ext]",
-            },
-          },
-        ],
-      },
-    ],
+              name: "assets/fonts/[name].[ext]"
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), //ignored with heroku use only
@@ -134,7 +145,7 @@ module.exports = {
       inject: true,
       chunks: ["main"],
       title: "Pomodoro",
-      favicon: "./app/assets/images/favicon.png",
-    }),
-  ],
+      favicon: "./app/assets/images/favicon.png"
+    })
+  ]
 };
