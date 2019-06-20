@@ -55,6 +55,7 @@
     height: 3.8rem;
     border-radius: 50%;
     transform: rotate(270deg);
+    
     &:hover {
       cursor: pointer;
     }
@@ -65,4 +66,7 @@
 }
 .rotate {
   animation: rotateIcon 1s ease-in-out;
+}
+.rotate--counter {
+  animation: rotateReverse 1s ease-in-out;
 }

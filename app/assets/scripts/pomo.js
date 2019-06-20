@@ -54,7 +54,8 @@ let minutes = Number(String(timeDOM.textContent).slice(0, 3)),
   breakTimeLong = document.querySelector("#breakTimeLong"),
   sBreakTime,
   sBreakTimeOriginal,
-  breakSec;
+  breakSec,
+  count =0;
 
 // Change DOM order for screens > 900px
 const parentEl = center.parentNode;
@@ -580,13 +581,25 @@ breakBtn.addEventListener("click", () => {
 });
 // Nav icon
 navIcon.addEventListener("click", () => {
-  navIcon.classList.toggle("rotate");
-  setTimeout(() => {
-    navIcon.classList.remove("rotate");
-  }, 1100);
+  if(count===0){
+    navIcon.classList.add("rotate");
+    setTimeout(() => {
+      navIcon.classList.remove("rotate");
+    }, 1100);
+    count++;
+  }else if(count===1){
+    navIcon.classList.add("rotate--counter");
+    setTimeout(() => {
+      navIcon.classList.remove("rotate--counter");
+    }, 1100);
+    count=0;
+  }
   left.classList.toggle("u-show");
   right.classList.toggle("u-show");
+  document.querySelector(".center").classList.toggle("u-force-hide");
 });
+
+
 // KEYPRESS LISTENERS
 import Keypress from "./keypress";
 const keypressHandlers = new Keypress(
