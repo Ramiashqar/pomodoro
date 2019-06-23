@@ -1,3 +1,4 @@
 # POMODORO
 
-Pomodoro Timer
+Pomodoro Timer with native JS,
+>>>still needs some style fixes
